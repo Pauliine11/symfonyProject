@@ -1,3 +1,12 @@
 body {
-    background-color: red;
+    background-image: url(/img/bgviolet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register {
+    width: 45%;
+    background-color: rgba(250, 247, 255, 0.486);
+    min-height: 300px;
+    border-radius: 30px;
 }
