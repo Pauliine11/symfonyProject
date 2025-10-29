@@ -3,18 +3,39 @@
 {% block title %}Midnight Compagny{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="text-center margin-top">
+        <h1 class="m-5">Midnight Compagny</h1>
+        <h2 class="m-5">"Les meilleurs événements sont les plus horrifiques"</h2>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Helloween {{ controller_name }}! ✅</h1>
+    <div class="container margin-top">
+        <div class="row">
+            <div class="col-6 d-flex justify-content-center">
+                <img class="box-index-img"  width="60%" src="{{ asset ('img/Img_monster-index(2).png') }}" alt="" />
+            </div>
+            <div class="col-6 text-center box-index1 p-5">
+                <p>L’équipe de la <span>Midnight Company</span> se distingue par son sens exceptionnel de l’organisation, malgré sa composition pour le moins… monstrueuse ! Chaque créature y joue un rôle précis : le vampire supervise les plannings nocturnes avec une rigueur millimétrée, le loup-garou assure la coordination des équipes sur le terrain avec énergie, tandis que le fantôme veille à la fluidité de la communication entre les services. Ensemble, ils allient discipline, entraide et créativité pour transformer le chaos en efficacité redoutable. Leur secret ? Une organisation à toute épreuve, même dans les nuits les plus sombres
+                </p>
+            </div>
+        </div>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/app/src/Controller/ProjectController.php</code></li>
-        <li>Your template at <code>/app/templates/project/index.html.twig</code></li>
-    </ul>
-</div>
+    <div class="container margin-top">
+        <div class="row">
+            <div class="col-6 text-center box-index1 p-5">
+                <p>La nuit d’Halloween à la Midnight Company est marquée par trois événements uniques, chacun offrant une expérience aussi étrange qu’inoubliable.
+                    <span>Le Lotos des vieux démons</span> ouvre le bal des ténèbres : un grand jeu de hasard réservé aux créatures millénaires, où les dés roulent dans la fumée des chandelles et où chaque victoire réveille un ancien pouvoir. Les participants s’y affrontent avec malice, entre rires grinçants et paris maudits.
+                    <span>Le Dîner des âmes perdues</span> réunit spectres, vampires et mortels curieux autour d’une table mystérieuse. Les plats y semblent flotter, les voix résonnent d’un autre monde, et chaque bouchée raconte une histoire oubliée. C’est un moment suspendu, à mi-chemin entre le festin et le rituel.
+                    Enfin, <span>le Défilé horrifique</span> fait trembler les rues sous un torrent de créativité. Monstres costumés, sorcières étincelantes et zombies élégants y défilent dans une ambiance festive et macabre. Chacun rivalise d’originalité pour décrocher le titre du costume le plus terrifiant… ou le plus fascinant.
+
+                    Trois événements, trois atmosphères, mais un même esprit : celui d’une Halloween signée Midnight Company, où la peur se mêle à la fête.
+                </p>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <img class="box-index-img"  width="60%" src="{{ asset ('img/Img_monster-index.png') }}" alt="" />
+            </div>
+
+        </div>
+    </div>
+
 {% endblock %}
