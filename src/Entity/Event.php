@@ -14,23 +14,23 @@ class Event
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $img = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $creation_date = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTime $modification_date = null;
 
     #[ORM\ManyToOne(inversedBy: 'events')]
-    private ?User $relation = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -66,7 +66,7 @@ class Event
         return $this->img;
     }
 
-    public function setImg(string $img): static
+    public function setImg(?string $img): static
     {
         $this->img = $img;
 
@@ -90,21 +90,21 @@ class Event
         return $this->modification_date;
     }
 
-    public function setModificationDate(\DateTime $modification_date): static
+    public function setModificationDate(?\DateTime $modification_date): static
     {
         $this->modification_date = $modification_date;
 
         return $this;
     }
 
-    public function getRelation(): ?User
+    public function getUser(): ?User
     {
-        return $this->relation;
+        return $this->user;
     }
 
-    public function setRelation(?User $relation): static
+    public function setUser(?User $user): static
     {
-        $this->relation = $relation;
+        $this->user = $user;
 
         return $this;
     }

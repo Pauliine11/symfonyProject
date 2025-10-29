@@ -19,7 +19,7 @@ class EventType extends AbstractType
             ->add('img')
             ->add('creation_date')
             ->add('modification_date')
-            ->add('relation', EntityType::class, [
+            ->add('user', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => 'id',
             ])
