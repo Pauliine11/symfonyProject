@@ -30,7 +30,7 @@ body {
     border-radius: 30px;
 }
 
-h1 {
+h1, h2, span {
     color: 	#D4AF37;
     font-family: 'Cinzel', serif;
 }
@@ -149,4 +149,26 @@ footer .social a:hover {
     background: var(--color);
     transform: translateY(-7px);
     box-shadow: 0 0 0.7rem var(--color);
+}
+
+
+
+.margin-top{
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.box-index1{
+  border: 5px solid #D4AF37;
+  border-radius: 5px;
+}
+
+.box-index-img{
+  border: 5px solid;
+  border-radius: 5px;
+}
+
+p{
+  color: #aaa;
+  font-family: 'Cinzel', serif;
 }
