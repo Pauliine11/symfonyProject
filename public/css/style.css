@@ -1,12 +1,26 @@
 body {
-    background-image: url(/img/bgviolet.jpg);
+    background-image: url(/img/bg3.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.log {
+  width: 45%;
+  padding: 65px;
+} 
+
 .register {
     width: 45%;
-    background-color: rgba(250, 247, 255, 0.486);
+    background-color: rgba(57, 47, 77, 0.486);
     min-height: 300px;
     border-radius: 30px;
+}
+
+.bgLight {
+    background-color: rgba(57, 47, 77, 0.486);
+    border-radius: 30px;
+}
+
+h1 {
+    color: 	#D4AF37;
 }
