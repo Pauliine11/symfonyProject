@@ -28,7 +28,7 @@ class EventType extends AbstractType
             //     'label' => 'Ajouter une image :',
             //     'attr' => ['class' => 'form-control'],
             // ])
-            ->add('creation_date')
+             ->add('creation_date')
             // ->add('modification_date')
             // ->add('user', EntityType::class, [
             //     'class' => User::class,

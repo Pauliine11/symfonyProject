@@ -1,42 +1,15 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-    <h1>Nos évènements</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Img</th>
-                <th>Creation_date</th>
-                <th>Modification_date</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                <td>{{ event.id }}</td>
-                <td>{{ event.title }}</td>
-                <td>{{ event.description }}</td>
-                <td>{{ event.img }}</td>
-                <td>{{ event.creationDate ? event.creationDate|date('Y-m-d') : '' }}</td>
-                <td>{{ event.modificationDate ? event.modificationDate|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_event_show', {'id': event.id}) }}">Voir +</a>
-                    <a href="{{ path('app_event_edit', {'id': event.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_event_new') }}">Créer un nouvel évènement</a>
+    <h1 class="box-index1 text-center mt-5">Les sujets</h1>
+    {% for event in events %}
+        <div class="m-5">
+            <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-dark col-12"><span>{{ event.title}}</span></a>
+        </div>
+    {% else %}
+        <p>Il n'y a pas encore de sujet</p>
+    {% endfor %}
+    <div class="d-flex justify-content-center">
+    <a href="{{ path('app_event_new') }}" class="btn colorIcons btn-dark margin-bot"><i class="fa-solid fa-ghost"></i> Créer un Événement</a>
+    </div>
 {% endblock %}
