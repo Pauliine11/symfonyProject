@@ -17,11 +17,11 @@ class EventType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('creation_date')
-            ->add('modification_date')
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'id',
-            ])
+            // ->add('modification_date')
+            // ->add('user', EntityType::class, [
+            //     'class' => User::class,
+            //     'choice_label' => 'id',
+            // ])
         ;
     }
 

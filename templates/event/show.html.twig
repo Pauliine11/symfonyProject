@@ -19,7 +19,7 @@
                         <p>Date de création : {{ event.creationDate ? event.creationDate|date('d-m-Y') : '' }}<p>
                     {% endif %}
 
-                    {% if app.user and app.user == event.user %}
+                    {% if is_granted('ROLE_ADMIN') %}
                         <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
                     {% endif %}
 
