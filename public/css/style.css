@@ -92,6 +92,10 @@ h1 {
     color: #F2C94C;
 }
 
+.icons {
+  width: 22px;
+}
+
 .iconDino {
   width: 45px;
   padding-right: 15px;
