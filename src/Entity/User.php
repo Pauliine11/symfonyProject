@@ -49,6 +49,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->events = new ArrayCollection();
     }
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,4 +172,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+
 }

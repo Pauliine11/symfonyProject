@@ -6,8 +6,10 @@
     <div class="container-fluid mt-5 margin-bot">
         <div class="d-flex justify-content-center border-dark">
             <div class="card text-center border-dark" style="width: 48%;">
-                <div class="card-header bgColor fs-4">
+                <div class="card-header text-bg-dark">
                     <h2>{{ event.title }}</h2>
+                </div>
+                <div class="card-body bgColor">
                     <p>{{ event.description }}<p>
                 </div>
                 <div class="card-body text-bg-dark">
@@ -17,8 +19,6 @@
                         <p>Date de création : {{ event.creationDate ? event.creationDate|date('d-m-Y') : '' }}<p>
                     {% endif %}
 
-                
-                    <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
                     {% if app.user and app.user == event.user %}
                         <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
                     {% endif %}

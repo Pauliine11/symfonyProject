@@ -14,14 +14,11 @@ class Event
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $img = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $creation_date = null;
@@ -57,18 +54,6 @@ class Event
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getImg(): ?string
-    {
-        return $this->img;
-    }
-
-    public function setImg(?string $img): static
-    {
-        $this->img = $img;
 
         return $this;
     }
