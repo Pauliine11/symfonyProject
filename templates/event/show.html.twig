@@ -1,42 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Event{% endblock %}
 
 {% block body %}
-    <h1>Event</h1>
+    <h1 class="mt-5 text-center">Voici l'évènement </h1>
+    <div class="container-fluid mt-5">
+        <div class="d-flex justify-content-center border-dark">
+            <div class="card text-center border-dark" style="width: 48%;">
+                <div class="card-header bgColor fs-4">
+                    <h2>{{ event.title }}</h2>
+                    <p>{{ event.description }}<p>
+                </div>
+                <div class="card-body text-bg-dark">
+                    {% if event.modificationDate %}
+                        <p>Date de modification : {{ event.modificationDate ? event.modificationDate|date('d-m-Y') : ''}}</p>
+                    {% else %}
+                        <p>Date de création : {{ event.creationDate ? event.creationDate|date('d-m-Y') : '' }}<p>
+                    {% endif %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ event.title }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ event.description }}</td>
-            </tr>
-            <tr>
-                <th>Img</th>
-                <td>{{ event.img }}</td>
-            </tr>
-            <tr>
-                <th>Creation_date</th>
-                <td>{{ event.creationDate ? event.creationDate|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Modification_date</th>
-                <td>{{ event.modificationDate ? event.modificationDate|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+                    <p>Créer par {{ event.user.pseudo ? event.user.pseudo : event.user.email }}<p>
 
-    <a href="{{ path('app_event_index') }}">back to list</a>
+                    {% if app.user and app.user == event.user %}
+                        <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
+                    {% endif %}
 
-    <a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        {{ include('event/_delete_form.html.twig') }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 
-    {{ include('event/_delete_form.html.twig') }}
 {% endblock %}

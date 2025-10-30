@@ -12,30 +12,33 @@
                     <a class="nav-link active text-light" aria-current="page" href="{{ path('app_about') }}">À propos</a>
                 </li> #}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ path('app_event_index') }}">Nos évènements</a>
+                    <a class="nav-link active" aria-current="page" href="{{ path ('app_event_index') }}">Nos évènements</a>
                 </li>
-                {# {% if is_granted('ROLE_ADMIN') %}
+                {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ path('app_comment_index') }}">A voir</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path ('app_event_new') }}">Ajouter évènement</a>
                     </li>
-                {% endif %} #}
+                {% endif %}
             </ul>
         </div>
         <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
             <ul class="navbar-nav">
                 {% if (app.user) %}
                     <li class="nav-item">
-                        <a class="nav-link p-2 flex-shrink-1" href="{{ path('app_logout') }}">Se déconnecter</a>
+                        <a class="nav-link p-2 flex-shrink-1" href="{{ path ('app_logout') }}">
+                        <img class="icons" src="{{ asset ('img/iconChat.png') }}" alt="icon représentant un chat" />Se déconnecter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link p-2 flex-shrink-1" href="{{ path('app_event_new') }}">Ajouter un Événement</a>
                     </li>  
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link p-2 flex-shrink-1" href="{{ path('app_register') }}">Inscription</a>
+                        <a class="nav-link p-2 flex-shrink-1" href="{{ path ('app_register') }}">
+                        <img class="icons" src="{{ asset ('img/iconGhost.png') }}" alt="icon représentant un fantôme blanc" />Inscription</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link p-2 flex-shrink-1" href="{{ path('app_login') }}">Se connecter</a>
+                        <a class="nav-link p-2 flex-shrink-1" href="{{ path ('app_login') }}">
+                        <img class="icons" src="{{ asset ('img/iconLantern.png') }}" alt="icon représentant une lanterne" />Se connecter</a>
                     </li>
                
                 {% endif %}
