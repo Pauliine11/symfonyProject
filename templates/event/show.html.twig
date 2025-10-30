@@ -3,7 +3,7 @@
 
 {% block body %}
     <h1 class="mt-5 text-center">Voici l'évènement </h1>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5 margin-bot">
         <div class="d-flex justify-content-center border-dark">
             <div class="card text-center border-dark" style="width: 48%;">
                 <div class="card-header bgColor fs-4">
@@ -17,8 +17,8 @@
                         <p>Date de création : {{ event.creationDate ? event.creationDate|date('d-m-Y') : '' }}<p>
                     {% endif %}
 
-                    <p>Créer par {{ event.user.pseudo ? event.user.pseudo : event.user.email }}<p>
-
+                
+                    <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
                     {% if app.user and app.user == event.user %}
                         <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
                     {% endif %}
