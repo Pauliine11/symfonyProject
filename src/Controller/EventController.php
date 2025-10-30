@@ -22,7 +22,7 @@ final class EventController extends AbstractController
         ]);
     }
 
-    #[Route('/ajouter', name: 'app_event_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_event_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $event = new Event();
@@ -30,7 +30,6 @@ final class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $entityManager->persist($event);
             $entityManager->flush();
 
