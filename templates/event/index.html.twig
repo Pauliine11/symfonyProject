@@ -3,8 +3,8 @@
 {% block body %}
     <h1 class="box-index1 text-center mt-5">Les sujets</h1>
     {% for event in events %}
-        <div class="m-5">
-            <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-dark col-12"><span>{{ event.title}}</span></a>
+        <div class="m-5 d-flex justify-content-center">
+            <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-dark col-7"><span>{{ event.title}}</span></a>
         </div>
     {% else %}
         <p>Il n'y a pas encore de sujet</p>
