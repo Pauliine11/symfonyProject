@@ -74,8 +74,12 @@ h1, h2, span {
   border-radius: 8px 8px 0 0;
 }
 
+.bgColor {
+    background-color: 2E2E2E;
+}
+
 .btnColor {
-    background-color: #F2C94C;
+    background-color: #783288;
     font-weight: bold;
 }
 
@@ -86,6 +90,10 @@ h1, h2, span {
 
 .colorIcons {
     color: #F2C94C;
+}
+
+.icons {
+  width: 22px;
 }
 
 .iconDino {
@@ -129,7 +137,7 @@ h1, h2, span {
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid #F2C94C;
+  border: 2px solid #F2C94C;
   margin: 0 8px;
   color: inherit;
   transition: 0.4s ease;
