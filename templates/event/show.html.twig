@@ -1,28 +1,31 @@
 {% extends 'base.html.twig' %}
-
-
+ 
+ 
 {% block body %}
-    <h1 class="mt-5 text-center">Voici l'évènement </h1>
+
+    <div class="container">
+        <h1 class="mt-5 text-center box-index1">Voici l'évènement </h1>
+    </div>
     <div class="container-fluid mt-5 margin-bot">
         <div class="d-flex justify-content-center border-dark">
-            <div class="card text-center border-dark" style="width: 55%;">
-                <div class="card-header text-bg-dark">
+            <div class="card text-center border-dark" style="width: 48%;">
+                <div class="card-header bg-dark box-form">
                     <h2>{{ event.title }}</h2>
                 </div>
-                <div class="card-body bgColor">
-                    <p>{{ event.description }}<p>
+                <div class="card-body box-desc">
+                    <p class="text-color">{{ event.description }}<p>
                 </div>
-                <div class="card-body text-bg-dark">
+                <div class="card-body bg-dark box-form">
                     {% if event.modificationDate %}
                         <p>Date de modification : {{ event.modificationDate ? event.modificationDate|date('d-m-Y') : ''}}</p>
                     {% else %}
                         <p>Date de création : {{ event.creationDate ? event.creationDate|date('d-m-Y') : '' }}<p>
                     {% endif %}
-
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
+                    <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-dark btnColor">Modifier</a>
+                    {% if app.user and app.user == event.user %}
+                       
                     {% endif %}
-
+ 
                     {% if is_granted('ROLE_ADMIN') %}
                         {{ include('event/_delete_form.html.twig') }}
                     {% endif %}
@@ -30,5 +33,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
