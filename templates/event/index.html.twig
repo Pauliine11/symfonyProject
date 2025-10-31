@@ -3,6 +3,9 @@
 {% block body %}
 <div class="container mt-5">
     <h1 class="box-index1 text-center mt-5">Les Événements</h1>
+    {% if app.user %}
+        <h2 class="text-center fs-4 mt-5">Bonjour <span class="purple text-decoration-underline">{{ app.user.pseudo}}</span>, nous espérons ( ou pas ) que vous ferez le bon choix .. </h2>
+    {% endif %}
 
     {% for event in events %}
         <div class="m-5 d-flex justify-content-center">

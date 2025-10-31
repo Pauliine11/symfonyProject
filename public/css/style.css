@@ -13,6 +13,23 @@ body {
     --color: #783288;
 }
 
+.logo .navbar-brand .navImg{
+    border-radius: 50%;
+    border: 3px solid var(--color);
+    box-shadow: 0 0 40px var(--color);
+    cursor: pointer;
+    transition: 0.3s ease;
+} 
+
+.logo .navbar-brand .navImg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 80px var(--color);
+}
+
+.purple {
+  color: var(--color);
+}
+
 .log {
   width: 45%;
   padding: 65px;
