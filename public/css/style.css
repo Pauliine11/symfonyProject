@@ -189,3 +189,18 @@ p{
 .form-label{
   color: #D4AF37;
 }
+
+.box-desc{
+  background-color: #331b3a;
+  border: 5px solid #D4AF37;
+  border-radius: 0px;
+}
+ 
+.box-form{
+  border: 5px solid #D4AF37;
+  border-radius: 0px;
+}
+ 
+.text-color{
+  color: #D4AF37;
+}
